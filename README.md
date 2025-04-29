@@ -21,7 +21,7 @@ curl_cpp::curl_get(curl, "http://google.com" , page);
 
 | Parameter       | Description |
 | --------------- | ------------- |
-| [Curl_handle] ` | A curl handle. This parameter is optional, use it to set curl options  |
+| `[Curl_handle]` | A curl handle. This parameter is optional, use it to set curl options  |
 |`url`            | The page URL. A const char* or a const std::string& |
 |`post_me`        | The content to post. A const char* or a const std::string&. You can specialize `curl_cpp::Curl_send_t<MyType>` to add custom types support. |
 |`append_here`    | Where to append the page returned by the server. A std::string& or a std::ostream&. You can specialize `curl_cpp::Curl_receive_t<MyType>` to add custom types support. |
