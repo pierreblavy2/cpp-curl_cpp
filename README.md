@@ -31,7 +31,12 @@ curl_cpp::curl_get(curl, "http://google.com" , page);
 ## Example
 ```c++
 curl_cpp::Curl_handle curl;
-curl_easy_setopt(curl,CURL_OPTION,...)
+auto err = curl_easy_setopt(curl,CURL_OPTION,...);
+if ( err != CURLE_OK  ){
+  // something wrong, see
+  // https://curl.se/libcurl/c/libcurl-errors.html
+}
 ```
 
-The curl options are documented [here](https://curl.se/libcurl/c/curl_easy_setopt.html)
+* The curl options are documented [here](https://curl.se/libcurl/c/curl_easy_setopt.html)
+* The curl errors are documented [here](https://curl.se/libcurl/c/libcurl-errors.html)
