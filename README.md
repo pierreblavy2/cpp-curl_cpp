@@ -8,6 +8,7 @@ Curl c++ wrapper
 ## Example
 ```c++
 curl_cpp::Curl_handle curl;
+//set options (see "Set curl options")
 
 std::string page;
 curl_cpp::curl_get(curl, "http://google.com" , page);
@@ -22,5 +23,15 @@ curl_cpp::curl_get(curl, "http://google.com" , page);
 | --------------- | ------------- |
 | [Curl_handle] ` | A curl handle. This parameter is optional, use it to set curl options  |
 |`url`            | The page URL. A const char* or a const std::string& |
-|`post_me`        | The content to post. A const char* or a const std::string& |
-|`append_here`    | Where to append the page returned by the server. A std::string& or a std::ostream& |
+|`post_me`        | The content to post. A const char* or a const std::string&. You can specialize `curl_cpp::Curl_send_t<MyType>` to add custom types support. |
+|`append_here`    | Where to append the page returned by the server. A std::string& or a std::ostream&. You can specialize `curl_cpp::Curl_receive_t<MyType>` to add custom types support. |
+
+
+# Set curl options
+## Example
+```c++
+curl_cpp::Curl_handle curl;
+curl_easy_setopt(curl,CURL_OPTION,...)
+```
+
+The curl options are documented [here](https://curl.se/libcurl/c/curl_easy_setopt.html)
