@@ -4,7 +4,7 @@ Curl c++ wrapper
 (c) Pierre BLAVY 2024, [LGPL 3.0](https://www.gnu.org/licenses/lgpl-3.0.txt)
 
 
-# Get a page
+# Get and post
 ## Example
 ```c++
 curl_cpp::Curl_handle curl;
